@@ -22,7 +22,7 @@
 [push]
 	autoSetupRemote = true
 [core]
-	editor = code --wait --new-window
+	editor = code --wait
 [difftool "vscode"]
 	cmd = code --wait --diff $LOCAL $REMOTE
 [mergetool "vscode"]
