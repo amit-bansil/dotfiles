@@ -109,7 +109,7 @@ PATH=~/.console-ninja/.bin:$PATH
 export PATH="/Users/ab/Library/Application Support/fnm:$PATH"
 eval "$(fnm env --use-on-cd)"
 
-fnm use 22.1.0 --log-level=quiet
+fnm use 22.9.0 --log-level=quiet
 
 alias py=python3
 alias y=yarn
