@@ -18,6 +18,7 @@
 	l = log
 	a = add
 	aa = add -A
+	cb = !git rev-parse --abbrev-ref HEAD | pbcopy
 	
 [push]
 	autoSetupRemote = true
