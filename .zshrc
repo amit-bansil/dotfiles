@@ -120,6 +120,7 @@ alias pp=pbpaste
 alias pc=pbcopy
 alias sz="source ~/.zshrc"
 alias code="code -w"
+alias p=pnpm
 
 function lo() {
   open "http://localhost:$1"
