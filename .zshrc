@@ -127,3 +127,7 @@ function lo() {
 }
 
 export PATH="$HOME/.bin:$PATH"
+
+alias g-cherry-pick-pr="git cherry-pick `gh pr view 123 --json mergeCommit --jq '.mergeCommit.oid'`"
+
+alias cc=claude

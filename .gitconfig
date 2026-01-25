@@ -14,11 +14,15 @@
 	m = merge
 	md = !git fetch && git merge origin/develop
 	p = push
+	pl = pull
 	f = fetch
 	l = log
 	a = add
 	aa = add -A
 	cb = !git rev-parse --abbrev-ref HEAD | pbcopy
+	cp = cherry-pick
+	st = stash
+	wt = worktree
 	
 [push]
 	autoSetupRemote = true
