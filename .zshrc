@@ -130,6 +130,7 @@ export PATH="$HOME/.bin:$PATH"
 
 alias g-cherry-pick-pr="git cherry-pick `gh pr view 123 --json mergeCommit --jq '.mergeCommit.oid'`"
 
-alias c=claude --allow-dangerously-skip-permissions --chrome --ide
+alias cc="claude --chrome --ide --allow-dangerously-skip-permissions"
+alias c="cc --chrome --ide --dangerously-skip-permissions "
 # sst
 export PATH=/Users/amitbansil/.sst/bin:$PATH
