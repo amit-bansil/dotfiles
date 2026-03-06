@@ -2,3 +2,5 @@
 !/.gitconfig
 !/.zshrc
 !/.gitignore
+!/.claude/
+!/.claude/settings.json

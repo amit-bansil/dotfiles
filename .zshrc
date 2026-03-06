@@ -109,7 +109,7 @@ PATH=~/.console-ninja/.bin:$PATH
 export PATH="/Users/ab/Library/Application Support/fnm:$PATH"
 eval "$(fnm env --use-on-cd)"
 
-fnm use 22.9.0 --log-level=quiet
+fnm use 24.12.0 --log-level=quiet
 
 alias py=python3
 alias y=yarn
@@ -130,4 +130,6 @@ export PATH="$HOME/.bin:$PATH"
 
 alias g-cherry-pick-pr="git cherry-pick `gh pr view 123 --json mergeCommit --jq '.mergeCommit.oid'`"
 
-alias cc=claude
+alias c=claude --allow-dangerously-skip-permissions --chrome --ide
+# sst
+export PATH=/Users/amitbansil/.sst/bin:$PATH
