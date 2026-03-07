@@ -115,10 +115,11 @@ alias py=python3
 alias y=yarn
 alias g=git
 alias o=open
-alias c=code
+alias e=code
 alias pp=pbpaste
 alias pc=pbcopy
 alias sz="source ~/.zshrc"
+alias ez="code ~/.zshrc"
 alias code="code -w"
 alias p=pnpm
 
@@ -128,9 +129,12 @@ function lo() {
 
 export PATH="$HOME/.bin:$PATH"
 
-alias g-cherry-pick-pr="git cherry-pick `gh pr view 123 --json mergeCommit --jq '.mergeCommit.oid'`"
+function g-cherry-pick-pr() {
+  git cherry-pick "$(gh pr view "$1" --json mergeCommit --jq '.mergeCommit.oid')"
+}
 
 alias cc="claude --chrome --ide --allow-dangerously-skip-permissions"
 alias c="cc --chrome --ide --dangerously-skip-permissions "
-# sst
+alias cca="git add .; c /1-commit"
+
 export PATH=/Users/amitbansil/.sst/bin:$PATH
