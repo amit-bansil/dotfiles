@@ -7,7 +7,8 @@
 	co = checkout
 	c = !smart-commit
 	cnv = commit --no-verify
-	ca = commit -a
+	ca = !git add . && git commit -a
+	cm = commit --amend
 	s = status
 	b = branch
 	d = diff
@@ -17,6 +18,8 @@
 	pl = pull
 	f = fetch
 	l = log
+	l1 = log --oneline
+	ll = log --stat
 	a = add
 	aa = add -A
 	cb = !git rev-parse --abbrev-ref HEAD | pbcopy
