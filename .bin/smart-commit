@@ -45,3 +45,5 @@ EXAMPLES:
 - fix(api): resolve memory leak
 - docs(readme): update setup instructions
 - refactor(utils): extract validation logic"
+
+NEVER INCLUDE THE Co-Authored-By: line under any circumstances.
