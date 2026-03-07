@@ -5,7 +5,7 @@
 	email = amit@bansil.org
 [alias]
 	co = checkout
-	c = commit
+	c = !smart-commit
 	cnv = commit --no-verify
 	ca = commit -a
 	s = status

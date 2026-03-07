@@ -156,3 +156,67 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# --------------------------------------------------------------------------------------------------------------
+# smart-commit - AI-Powered Git Commits with Claude Code
+# --------------------------------------------------------------------------------------------------------------
+# A zsh function that uses Claude Code to analyze your git changes and create
+# logical, atomic commits following conventional commits format.
+#
+# Requirements:
+#   - Claude Code CLI installed (https://github.com/anthropics/claude-code)
+#   - Git installed
+#   - zsh shell
+#
+# Installation:
+#   Add this function to your ~/.zshrc file, then run: source ~/.zshrc
+# --------------------------------------------------------------------------------------------------------------
+
+smart-commit() {
+    local context="${1:-}"
+    local prompt="Analyze git changes and create logical, atomic commits using conventional commits format."
+
+    if [ -n "$context" ]; then
+        prompt="$prompt Context: $context"
+    fi
+
+    claude "$prompt" \
+    --allowedTools "Bash(git status)" \
+    "Bash(git diff:*)" \
+    "Bash(git add:*)" \
+    "Bash(git commit:*)" \
+    "Read" \
+    --disallowedTools "Bash(git push:*)" \
+    "Bash(git reset:*)" \
+    "Bash(git revert:*)" \
+    "Bash(git clean:*)" \
+    "Bash(git rebase:*)" \
+    "Bash(git merge:*)" \
+    "Bash(git checkout:*)" \
+    "Bash(git branch:*)" \
+    "Bash(rm:*)" \
+    "Bash(mv:*)" \
+    "Write" \
+    "Edit" \
+    --model="haiku" \
+    --append-system-prompt "STRICT RULES:
+1. ONLY use git status, git diff, git add, and git commit commands
+2. Use conventional commits: feat|fix|docs|style|refactor|perf|test|build|ci|chore
+3. Format: <type>(<scope>): <description> (max 50 chars)
+4. Group related changes in one commit
+5. Keep commits atomic and focused
+6. One logical change per commit
+7. After each commit, verify with git status
+
+WORKFLOW:
+- Examine changes with git status and git diff
+- Plan commits (announce your strategy)
+- Execute commits one by one
+- Provide summary of completed commits
+
+EXAMPLES:
+- feat(auth): add JWT validation
+- fix(api): resolve memory leak
+- docs(readme): update setup instructions
+- refactor(utils): extract validation logic"
+}
