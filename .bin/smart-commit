@@ -46,4 +46,4 @@ EXAMPLES:
 - docs(readme): update setup instructions
 - refactor(utils): extract validation logic"
 
-NEVER INCLUDE THE Co-Authored-By: line under any circumstances.
+Do not include Co-Authored-By lines in commit messages.
