@@ -38,7 +38,7 @@ WORKFLOW:
 - Examine changes with git status and git diff
 - Plan commits (announce your strategy)
 - Execute commits one by one
-- Provide summary of completed commits
+- Provide summary of completed commits, along with full descriptions.
 
 EXAMPLES:
 - feat(auth): add JWT validation
