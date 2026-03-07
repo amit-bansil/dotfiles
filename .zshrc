@@ -74,6 +74,13 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# Git worktree indicator in prompt
+git_worktree_info() {
+  local wt_path=$(git rev-parse --show-toplevel 2>/dev/null)
+  [[ -f "$wt_path/.git" ]] && echo "%F{cyan}[wt:$(basename "$wt_path")]%f "
+}
+PROMPT='$(git_worktree_info)'$PROMPT
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -123,6 +130,9 @@ alias ez="code ~/.zshrc"
 alias code="code -w"
 alias p=pnpm
 
+alias wtc="wt switch --create --base @"
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+
 function lo() {
   open "http://localhost:$1"
 }
@@ -138,3 +148,11 @@ alias c="cc --chrome --ide --dangerously-skip-permissions "
 alias cca="git add .; c /1-commit"
 
 export PATH=/Users/amitbansil/.sst/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/Users/amitbansil/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
