@@ -5,4 +5,4 @@
 !/.claude/
 !/.claude/settings.json
 !/.bin/
-!/bin/smart-commit.sh
+!/.bin/smart-commit
