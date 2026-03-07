@@ -25,11 +25,10 @@ claude "$prompt" \
 "Bash(mv:*)" \
 "Write" \
 "Edit" \
---model="haiku" \
 --append-system-prompt "STRICT RULES:
 1. ONLY use git status, git diff, git add, and git commit commands
 2. Use conventional commits: feat|fix|docs|style|refactor|perf|test|build|ci|chore
-3. Format: <type>(<scope>): <description> (max 50 chars)
+3. Format: <type>(<scope>): <description> (max 50 chars)\n detailed description explaining the why and what of the change\n\nBREAKING CHANGE: description of the breaking change
 4. Group related changes in one commit
 5. Keep commits atomic and focused
 6. One logical change per commit
