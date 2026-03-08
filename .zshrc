@@ -130,7 +130,7 @@ alias ez="code ~/.zshrc"
 alias code="code -w"
 alias p=pnpm
 
-alias wtc="wt switch --create --base @"
+alias wtc="wt switch --create --base develop"
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 
 function lo() {
