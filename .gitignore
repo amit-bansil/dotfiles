@@ -4,5 +4,7 @@
 !/.gitignore
 !/.claude/
 !/.claude/settings.json
+!/.claude/commands/
+!/.claude/commands/*
 !/.bin/
 !/.bin/smart-commit
