@@ -5,6 +5,7 @@
 	email = amit@bansil.org
 [alias]
 	co = checkout
+	cod = checkout develop
 	c = commit
 	cnv = commit --no-verify
 	ca = !git add . && git commit -a
