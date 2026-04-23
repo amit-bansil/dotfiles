@@ -45,3 +45,5 @@
 	algorithm = histogram
 [commit]
 	verbose = true
+[url "https://github.com/"]
+	insteadOf = git@github.com:
