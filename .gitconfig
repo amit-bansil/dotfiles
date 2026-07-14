@@ -1,8 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = Amit D. Bansil
-	email = amit@bansil.org
+	name = Amit Bansil
+	email = amit.bansil@intus.care
 [alias]
 	co = checkout
 	cod = checkout develop
@@ -47,3 +47,5 @@
 	verbose = true
 [url "https://github.com/"]
 	insteadOf = git@github.com:
+[pull]
+	rebase = false
