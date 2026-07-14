@@ -156,3 +156,20 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+# fnm
+FNM_PATH="/opt/homebrew/opt/fnm/bin"
+if [ -d "$FNM_PATH" ]; then
+  eval "$(fnm env --shell zsh)"
+fi
+
+eval "$(/Users/amitbansil/.local/bin/mise activate zsh)" # added by https://mise.run/zsh
+
+alias m=mise
+
+alias b=bun
+
+# bun completions
+[ -s "/Users/amitbansil/.bun/_bun" ] && source "/Users/amitbansil/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
