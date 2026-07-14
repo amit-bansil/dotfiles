@@ -143,8 +143,7 @@ function g-cherry-pick-pr() {
   git cherry-pick "$(gh pr view "$1" --json mergeCommit --jq '.mergeCommit.oid')"
 }
 
-alias cc="claude --chrome --ide --allow-dangerously-skip-permissions"
-alias c="cc --chrome --ide --dangerously-skip-permissions "
+alias c="claude --chrome --ide"
 alias cca="git add .; c /1-commit"
 
 export PATH=/Users/amitbansil/.sst/bin:$PATH
@@ -173,3 +172,5 @@ alias b=bun
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
+
+alias bi="brew install"
